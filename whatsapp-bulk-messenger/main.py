@@ -2,7 +2,7 @@ import pandas as pd
 import webbrowser
 from pynput.keyboard import Key, Controller
 import time
-import os
+
 
 
 
@@ -12,10 +12,10 @@ mylist = df['urls'].tolist() #urls is the column name
 # print(mylist) # will print all the urls
 
 # now loop through each url & perform actions.
-for idx, url in enumerate(mylist):
+for url in mylist:
+   webbrowser.open(url)
    webbrowser.open(url)
    keyboard = Controller()
    time.sleep(5)
    keyboard.press(Key.enter)
    keyboard.release(Key.enter)
-   os.system("taskkill /im firefox.exe /f")
