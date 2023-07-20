@@ -14,6 +14,7 @@ mylist = df['urls'].tolist() #urls is the column name
 # now loop through each url & perform actions.
 for url in mylist:
    webbrowser.open(url)
+   time.sleep(5)
    webbrowser.open(url)
    keyboard = Controller()
    time.sleep(5)
